@@ -4,5 +4,16 @@
   LOS PRODUCTOS DEBEN TENER LAS SIGUIENTES PROPIEDADES:
   NOMBRE, PRECIO, NOMBRE DEL VENDEDOR.
 -->
-
-<button mat-button>Hola</button>
+<button *ngIf="dataSubmitted" (click)="onClickAdd()">Add Vendedor</button>
+<app-product-list 
+[productos]="data" 
+*ngIf="dataSubmitted" 
+(vendedorToEdit)="onPassEdit($event)" 
+(productosUpdated)="onUpdateDeleteProductos($event)"
+></app-product-list>
+<app-product-form 
+(itemAdded)="onItemAdd($event)" 
+*ngIf="!dataSubmitted" 
+[vendedorToEdit]="vendedorToEdit"
+(itemEdited)="onItemEdit($event)">
+</app-product-form>
