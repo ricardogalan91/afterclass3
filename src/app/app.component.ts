@@ -7,9 +7,9 @@ import { Vendedor } from './product-list/vendedor.interface';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  data:any=[];
-  dataSubmitted=false;
-  vendedorToEdit:Vendedor|null;
+  data:any=[]; //propiedad que le pasaremos a la lista para llenar la tabla
+  dataSubmitted=false; //booleano que usaremos con el ngIf para hacer toggle entre form y lista
+  vendedorToEdit:Vendedor|null; //propiedad con vendedor y productos a editar en el form, se la pasaremos al formulario
   onItemAdd(e:any){
     /* En este metodo se hace un update de la data que además que se modifica el id manualmente por el front */
     let index=1;

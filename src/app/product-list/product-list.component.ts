@@ -8,9 +8,9 @@ import { Vendedor } from './vendedor.interface';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  @Input() productos:Vendedor[];
-  @Output() vendedorToEdit= new EventEmitter<Vendedor>();
-  @Output() productosUpdated = new EventEmitter<Vendedor[] | null>();
+  @Input() productos:Vendedor[]; //recibimos la data desde app component
+  @Output() vendedorToEdit= new EventEmitter<Vendedor>(); //pasamos el vendedor con productos a editar en el form, al component app
+  @Output() productosUpdated = new EventEmitter<Vendedor[] | null>(); //array de productos editado al component padre por delete
   displayedColumns=['producto', 'precio', 'vendedor', 'delete']
   @ViewChild('table') table: MatTable<any>;
   constructor() { }

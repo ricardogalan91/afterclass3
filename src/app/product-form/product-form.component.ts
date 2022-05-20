@@ -8,10 +8,10 @@ import { Vendedor } from '../product-list/vendedor.interface';
   styleUrls: ['./product-form.component.scss']
 })
 export class ProductFormComponent implements OnInit {
-  vendedorForm:FormGroup;
-  @Input() vendedorToEdit:Vendedor|null;
-  @Output() itemAdded = new EventEmitter<any>();  
-  @Output() itemEdited = new EventEmitter<any>();
+  vendedorForm:FormGroup;  
+  @Input() vendedorToEdit:Vendedor|null; //vendedor y productos a ser editados
+  @Output() itemAdded = new EventEmitter<any>(); //item añadido por el form 
+  @Output() itemEdited = new EventEmitter<any>(); // item editado por el form
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
